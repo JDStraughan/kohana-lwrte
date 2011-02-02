@@ -5,11 +5,11 @@ return array(
 		'directory' => '/uploads'
 	),
 	'scripts' => array(
-		'jqueryrte/media/jquery.rte.js',
-		'jqueryrte/media/jquery.rte.ocupload.js',
-		'jqueryrte/media/jquery.rte.tb.js'
+		'lwrte/media/jquery.rte.js',
+		'lwrte/media/jquery.rte.ocupload.js',
+		'lwrte/media/jquery.rte.tb.js'
 	),
 	'styles' => array(
-		'jqueryrte/media/jquery.rte.css'
+		'lwrte/media/jquery.rte.css'
 	)
 );

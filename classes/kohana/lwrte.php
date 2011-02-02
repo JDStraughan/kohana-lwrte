@@ -3,7 +3,7 @@
 /**
  * Helper methods to setup jQueryRTE with default scripts and styles
  */
-class Kohana_jQueryRTE {
+class Kohana_LWRTE {
 	
 	/**
 	 * Gets an array from Kohan_Config
@@ -12,7 +12,7 @@ class Kohana_jQueryRTE {
 	 */
 	protected static function _get_config($type) 
 	{
-		$config = Kohana_Config::instance()->load('jqueryrte');
+		$config = Kohana_Config::instance()->load('lwrte');
 		return $config[$type];
 	}
 

@@ -5,7 +5,7 @@
  * 
  * Based on the jqueryrte upload.php file by Andrey Gayvoronsky - http://www.gayvoronsky.com
  */
-class Controller_jQueryRTE extends Controller {
+class Controller_LWRTE extends Controller {
 	
 	/**
 	 * Handles XHR POST request for file upload from RTE
@@ -15,7 +15,7 @@ class Controller_jQueryRTE extends Controller {
 	public function action_upload() 
 	{
 
-		$config = Kohana_Config::instance()->load('jqueryrte');
+		$config = Kohana_Config::instance()->load('lwrte');
 		
 		$upload_dir = $config['upload']['directory'];
 		
