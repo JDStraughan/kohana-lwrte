@@ -11,5 +11,9 @@ return array(
 	),
 	'styles' => array(
 		'lwrte/media/jquery.rte.css'
-	)
+	),
+	'options' => array(
+		'controls_rte' => 'rte_toolbar',
+        'controls_html' => 'html_toolbar'
+     )
 );

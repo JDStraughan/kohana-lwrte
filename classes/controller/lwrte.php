@@ -31,7 +31,7 @@ class Controller_LWRTE extends Controller {
 	
 		$arr = array(
 			'error' => $file['error'], 
-			'file' => "{$dir}/{$file['name']}",
+			'file' => "{$upload_dir}/{$file['name']}",
 			'tmpfile' => $file['tmp_name'], 
 			'size' => $file['size']
 		);
