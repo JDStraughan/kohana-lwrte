@@ -4,27 +4,18 @@
  * Helper methods to setup jQueryRTE with default scripts and styles
  */
 class Kohana_jQueryRTE {
-
+	
 	/**
-	 * Default scripts to load
+	 * Gets an array from Kohan_Config
 	 * 
-	 * @var array
+	 * @return array
 	 */
-	protected $_scripts = array(
-		'jqueryrte/jquery.rte.js',
-		'jqueryrte/jquery.rte.ocupload.js',
-		'jqueryrte/jquery.rte.tb.js'
-	);
+	protected static function _get_config($type) 
+	{
+		$config = Kohana_Config::instance()->load('jqueryrte');
+		return $config[$type];
+	}
 
-	/**
-	 * Default styles to load 
-	 * 
-	 * @var array
-	 */
-	protected $_styles = array(
-		'jqueryrte/jquery.rte.css'
-	);
-		
 	/**
 	 * Gets the default css links for the rte
 	 *  
@@ -33,7 +24,7 @@ class Kohana_jQueryRTE {
 	public static function get_styles_html() 
 	{
 		$html = array();
-		foreach ($this->_styles as $style) 
+		foreach (self::_get_config('styles') as $style) 
 		{
 			$html[] = HTML::style(url::base() . $style);
 		}
@@ -48,7 +39,7 @@ class Kohana_jQueryRTE {
 	public static function get_scripts_html()
 	{
 		$html = array();
-		foreach ($this->_scripts as $script) 
+		foreach (self::_get_config('scripts') as $script) 
 		{
 			$html[] = HTML::script(url::base() . $script);
 		}

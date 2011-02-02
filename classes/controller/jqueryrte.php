@@ -70,7 +70,7 @@ class Controller_jQueryRTE extends Controller {
 		// Remove the extension from the filename
 		$file = substr($file, 0, -(strlen($ext) + 1));
 
-		if ($file = Kohana::find_file('media/guide', $file, $ext))
+		if ($file = Kohana::find_file('media', $file, $ext))
 		{
 			// Check if the browser sent an "if-none-match: <etag>" header, and tell if the file hasn't changed
 			$this->request->check_cache(sha1($this->request->uri).filemtime($file));

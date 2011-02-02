@@ -2,14 +2,14 @@
 
 $modules = Kohana::modules();
 
-Route::set('media', 'jqueryrte/media(/<file>)', array('file' => '.+'))
+Route::set('jqueryrte-media', 'jqueryrte/media(/<file>)', array('file' => '.+'))
 	->defaults(array(
 		'controller' => 'jqueryrte',
 		'action'     => 'media',
 		'file'       => NULL,
 	));
 
-Route::set('upload','jqueryrte/upload')
+Route::set('jqueryrte-upload','jqueryrte/upload')
 	->defaults(array(
 		'controller' => 'jqueryrte',
 		'action'     => 'upload'
