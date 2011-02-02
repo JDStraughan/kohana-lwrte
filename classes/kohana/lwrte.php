@@ -75,7 +75,7 @@ class Kohana_LWRTE {
 	 * @param array $options OPTIONAL
 	 * @return string
 	 */
-	public static function get_invoke($class_name, array $options = array()) 
+	public static function get_invoke($class_name = 'lwrte', array $options = array()) 
 	{
 		self::_process_options($options);
 		return sprintf('<script type="text/javascript">$(function() {var arr = $(\'.%s\').rte(%s);});</script>',

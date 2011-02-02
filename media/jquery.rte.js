@@ -28,9 +28,9 @@ lwRTE_resizer.mousedown = function(resizer, e) {
 }
 
 lwRTE_resizer.mouseup = function(resizer, e) {
-        resizer.drag = false;
-        $('body', document).css('cursor', 'auto');
-        return false;
+		resizer.drag = false;
+		$('body', document).css('cursor', 'auto');
+		return false;
 }
 
 lwRTE_resizer.mousemove = function(resizer, e) {

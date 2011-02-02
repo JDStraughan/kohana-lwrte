@@ -6,7 +6,8 @@
  */
 var site_url			= 'http://localhost/takaracms/';
 var rte_tag             = '-rte-tmp-tag-';
-
+/*
+ * Original setup - I use custom below
 var     rte_toolbar = {
         s1              : {separator: true},
         bold            : {command: 'bold', tags:['b', 'strong']},
@@ -66,10 +67,47 @@ var     rte_toolbar = {
 };
 
 var html_toolbar = {
-        s1                              : {separator: true},
+        s1                      : {separator: true},
         word                    : {exec: lwrte_cleanup_word},
         clear                   : {exec: lwrte_clear}
 };
+*/
+
+var rte_toolbar = {
+        s1              : {separator: true},
+        bold            : {command: 'bold', tags:['b', 'strong']},
+        italic          : {command: 'italic', tags:['i', 'em']},
+        strikeThrough   : {command: 'strikethrough', tags: ['s', 'strike'] },
+        underline       : {command: 'underline', tags: ['u']},
+        s2              : {separator: true },
+        justifyLeft     : {command: 'justifyleft'},
+        justifyCenter   : {command: 'justifycenter'},
+        justifyRight    : {command: 'justifyright'},
+        justifyFull     : {command: 'justifyfull'},
+        s3              : {separator : true},
+        s4              : {separator : true},
+        orderedList     : {command: 'insertorderedlist', tags: ['ol'] },
+        unorderedList   : {command: 'insertunorderedlist', tags: ['ul'] },
+        s6              : {separator : true },
+        image           : {exec: lwrte_image, tags: ['img'] },
+        link            : {exec: lwrte_link, tags: ['a'] },
+        unlink          : {command: 'unlink'},
+        s8              : {separator : true },
+        block           : {command: 'formatblock', select: '\
+<select>\
+        <option value="">- format -</option>\
+        <option value="<p>">Paragraph</option>\
+        <option value="<h1>">Header 1</option>\
+        <option value="<h2>">Header 2</options>\
+        <option value="<h3>">Header 3</option>\
+        <option value="<h4>">Header 4</options>\
+        <option value="<h5>">Header 5</option>\
+        <option value="<h6>">Header 6</options>\
+</select>\
+        ', tag_cmp: lwrte_block_compare, tags: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']},
+};
+
+var html_toolbar = {};
 
 /*** tag compare callbacks ***/
 function lwrte_block_compare(node, tag) {
@@ -85,7 +123,7 @@ function lwrte_style_init(rte) {
         // load CSS info. javascript only issue is not working correctly, that's why ajax-php :(
         if(rte.css.length) {    
                 $.ajax({
-                        url: site_url + "/jqueryrte/styles", 
+                        url: site_url + "/lwrte/styles", 
                         type: "POST",
                         data: { css: rte.css[rte.css.length - 1] }, 
                         async: false,
@@ -257,7 +295,7 @@ function lwrte_image() {
         var url = $('#url', panel);
         var upload = $('#file', panel).upload( {
                 autoSubmit: false,
-                action: site_url + 'jqueryrte/upload',
+                action: site_url + 'lwrte/upload',
                 onSelect: function() {
                         var file = this.filename();
                         var ext = (/[.]/.exec(file)) ? /[^.]+$/.exec(file.toLowerCase()) : '';
@@ -441,7 +479,7 @@ function lwrte_link() {
         var url = $('#url', panel);
         var upload = $('#file', panel).upload( {
                 autoSubmit: true,
-                action: site_url + 'jqueryrte/upload',
+                action: site_url + 'lwrte/upload',
                 onComplete: function(response) { 
                         if(response.length <= 0)
                                 return;

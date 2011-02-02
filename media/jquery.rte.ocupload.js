@@ -9,7 +9,7 @@
                 options = $.extend({
                         name: 'file',
                         enctype: 'multipart/form-data',
-                        action: '',
+                        action: 'http://localhost/takaracms/lwrte/upload/',
                         autoSubmit: true,
                         onSubmit: function() {},
                         onComplete: function() {},

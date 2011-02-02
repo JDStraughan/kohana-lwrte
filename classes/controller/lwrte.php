@@ -17,7 +17,7 @@ class Controller_LWRTE extends Controller {
 
 		$config = Kohana_Config::instance()->load('lwrte');
 		
-		$upload_dir = $config['upload']['directory'];
+		$upload_dir = $config['upload']['abs_path'];
 		
 		// only handles one file
 		$file = current($_FILES); 
@@ -31,7 +31,7 @@ class Controller_LWRTE extends Controller {
 	
 		$arr = array(
 			'error' => $file['error'], 
-			'file' => "{$upload_dir}/{$file['name']}",
+			'file' => "{$config['upload']['rel_path']}/{$file['name']}",
 			'tmpfile' => $file['tmp_name'], 
 			'size' => $file['size']
 		);
