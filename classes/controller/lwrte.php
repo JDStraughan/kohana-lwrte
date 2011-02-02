@@ -3,12 +3,16 @@
 /**
  * Handles uploads and media for jQueryRTE
  * 
- * Based on the jqueryrte upload.php file by Andrey Gayvoronsky - http://www.gayvoronsky.com
  */
 class Controller_LWRTE extends Controller {
 	
 	/**
 	 * Handles XHR POST request for file upload from RTE
+	 * This is a base example of how an upload can work
+	 * This method should be overridden to validate file types (images for example) or
+	 * custom functionality like cropping, resizing, etc. 
+	 * Based on the jqueryrte uploader.php file by Andrey Gayvoronsky - http://www.gayvoronsky.com
+	 * located at http://code.google.com/p/lwrte/source/browse/trunk/toolbar/uploader.php
 	 * 
 	 * @return string
 	 */
@@ -55,7 +59,7 @@ class Controller_LWRTE extends Controller {
 	}
 	
 	/**
-	 * This is a direct copy of the media action from the userguide module
+	 * This is a copy of the media action from the userguide module
 	 * 
 	 * @return void
 	 */
