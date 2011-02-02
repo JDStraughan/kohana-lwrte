@@ -1,5 +1,9 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
+/**
+ * NOTE: All double quotes will be removed
+ * Escape single quotes for all quoted values
+ */
 return array(
 	'upload' => array(
 		'abs_path' => '/Users/you/Sites/yoursite/uploads',
@@ -14,7 +18,8 @@ return array(
 		'lwrte/media/jquery.rte.css'
 	),
 	'options' => array(
-		'controls_rte' => 'rte_toolbar',
+		'base_url'		=> '\'http://localhost/takaracms/\'',
+		'controls_rte' 	=> 'rte_toolbar',
         'controls_html' => 'html_toolbar'
      )
 );

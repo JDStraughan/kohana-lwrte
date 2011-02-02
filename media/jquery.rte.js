@@ -47,13 +47,13 @@ lwRTE_resizer.mousemove = function(resizer, e) {
 
 var lwRTE = function (textarea, options) {
         this.css                = [];
-        this.css_class  = options.frame_class || '';
-        this.base_url   = options.base_url || '';
+        this.css_class  		= options.frame_class || '';
+        this.base_			   	= options.base_url || '';
         this.width              = options.width || $(textarea).width() || '100%';
         this.height             = options.height || $(textarea).height() || 350;
         this.iframe             = null;
-        this.iframe_doc = null;
-        this.textarea   = null;
+        this.iframe_doc 		= null;
+        this.textarea   		= null;
         this.event              = null;
         this.range              = null;
         this.toolbars   = {rte: '', html : ''};
