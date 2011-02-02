@@ -1,22 +1,18 @@
-What
-====
+##What
 A simple wrapper for Lightweight Rich Text Editor (RTE / WYSIWYG) for jQuery
-http://code.google.com/p/lwrte/
 
-Why
-===
-Keeping the javascript, helper methods, and config in a module makes it easy ;)
+<http://code.google.com/p/lwrte/>
 
-How
-===
+##Why
+Keeping the javascript, helper methods, and config in a module makes it easy.
 
- 1 - Add to bootstrap
- 2 - Override config file and update with your upload directory
+##How
+ 1. Add to bootstrap
+ 2. Override config file and update with your upload directory
 
-Optional
---------
+###Optional
 
-Use the helpers to create your scripts/styles in your <head>:
+Use the helpers to create your scripts/styles in your document's head:
 
 
 This:
@@ -48,4 +44,4 @@ Will produce this:
 	});
 	</script> 
 	
-Based on your config settings.  For configuration of the LWRTE, please visit: http://code.google.com/p/lwrte/
+Based on your config settings.  For configuration of the LWRTE, please visit: <http://code.google.com/p/lwrte/>
